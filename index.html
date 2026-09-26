@@ -1,276 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John's B.M.B Tree Service | Mississippi Gulf Coast</title>
-    <style>
-        :root {
-            --primary-green: #1b4332;
-            --accent-green: #2d6a4f;
-            --light-bg: #f4f6f4;
-            --text-dark: #212529;
-        }
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0 0 80px 0; /* Extra padding at bottom so content isn't hidden by the floating bar */
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--primary-green);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 1rem;
-        }
-        header h1 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.8rem;
-        }
-        header p {
-            margin: 0;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1.5rem;
-        }
-        
-        /* Image Slider Styles */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-            background: #ddd;
-        }
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .slide.active {
-            opacity: 1;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John's B.M.B Tree Service | Professional Arborist Care – Gulf Coast</title>
+  <meta name="description" content="Local hands, honest work & professional arborist care. Safe tree removal, trimming, and storm damage cleanup. Call (228) 213-3019.">
+  <meta property="og:title" content="John's B.M.B Tree Service">
+  <meta property="og:description" content="Local hands, honest work & professional arborist care on the Gulf Coast.">
+  <meta property="og:type" content="website">
 
-        .cta-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-top: -0.5rem;
-            position: relative;
-        }
-        .btn {
-            display: block;
-            background-color: #2b9348;
-            color: white;
-            text-decoration: none;
-            padding: 0.9rem;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin: 0.75rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .btn-secondary {
-            background-color: #495057;
-        }
-        section {
-            background: white;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        section h2 {
-            color: var(--primary-green);
-            font-size: 1.3rem;
-            margin-top: 0;
-            border-bottom: 2px solid var(--light-bg);
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            padding-left: 1.2rem;
-            margin: 0.5rem 0;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
+  <style>
+    :root {
+      --green-dark: #1b4332;
+      --green: #2d6a4f;
+      --green-light: #40916c;
+      --cream: #f8f9f5;
+      --wood: #bc6c25;
+      --text: #1a1a1a;
+      --white: #ffffff;
+      --shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
 
-        /* Video Grid Styles */
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 1rem;
-        }
-        .video-card {
-            background: #fdfdfd;
-            border: 1px solid #e0e0e0;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .video-card h3 {
-            font-size: 0.95rem;
-            margin: 8px 0 0 0;
-            color: var(--text-dark);
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Always-Visible Sticky Footer Bar */
-        .sticky-quote-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--primary-green);
-            padding: 0.75rem 1rem;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-        .sticky-btn {
-            background-color: #2b9348;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-        }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--cream);
+    }
 
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.85rem;
-            color: #6c757d;
-        }
-    </style>
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: var(--white);
+      text-align: center;
+      padding: 2.5rem 1.25rem 2rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.75rem, 5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+    }
+
+    /* Slider */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      margin: 1.75rem 0 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #ddd;
+    }
+
+    .slider-container img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+    }
+
+    .slider-container img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* CTA Box */
+    .cta-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+      border-top: 4px solid var(--green);
+    }
+
+    .cta-box p {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--green-dark);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 8px;
+      margin: 0.4rem;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(45, 106, 79, 0.3);
+    }
+
+    .btn:hover, .btn:focus {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #1d3557;
+      box-shadow: 0 2px 8px rgba(29, 53, 87, 0.25);
+    }
+
+    .btn-secondary:hover, .btn-secondary:focus {
+      background: #14253d;
+    }
+
+    /* Services */
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--green-dark);
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .service-card h3 {
+      color: var(--green);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #a7c957;
+      text-decoration: none;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      .slider-container { height: 260px; }
+      .btn { display: block; width: 100%; max-width: 320px; margin: 0.5rem auto; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>John's B.M.B Tree Service</h1>
-        <p>Local Hands, Honest Work & Professional Arborist Care</p>
-    </header>
+  <header>
+    <h1>John's B.M.B Tree Service</h1>
+    <p>Local Hands, Honest Work &amp; Professional Arborist Care</p>
+  </header>
 
-    <div class="container">
-        
-        <!-- Auto-Rotating Image Slider -->
-        <div class="slider-container" id="image-slider">
-            <!-- Add your uploaded image file names inside the src attributes below -->
-            <img src="tree1.jpg" class="slide active" alt="Tree Service Work">
-            <img src="tree2.jpg" class="slide" alt="Arborist Cutting">
-            <img src="tree3.jpg" class="slide" alt="Gulf Coast Tree Care">
-        </div>
+  <div class="container">
 
-        <!-- Quick Call / Action Box -->
-        <div class="cta-box" id="quote">
-            <p style="margin-top: 0; font-weight: 600;">Need safe and reliable tree removal?</p>
-            <a href="tel:2282133019" class="btn">📞 Call Now: (228) 213-3019</a>
-            <a href="https://www.facebook.com/people/Johns-Tree-Service/61594230819675/" target="_blank" class="btn btn-secondary">Visit Facebook Page</a>
-            <a href="https://share.google/VYydDAysWhwR4NTkl" target="_blank" class="btn btn-secondary" style="background-color: #1d3557;">Google Business Profile</a>
-        </div>
-
-        <!-- YouTube Videos Section -->
-        <section id="videos">
-            <h2>Latest From Our YouTube Channel</h2>
-            <div id="youtube-videos" class="video-grid">
-                <p>Loading latest videos...</p>
-            </div>
-        </section>
-
+    <!-- Auto-Rotating Image Slider - All 21 Photos -->
+    <div class="slider-container" id="image-slider" aria-label="Photo gallery of our tree work">
+      <img src="TreePics1.jpg"  class="slide active" alt="Tree service work">
+      <img src="TreePics2.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics3.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics4.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics5.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics6.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics7.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics8.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics9.jpg"  class="slide" alt="Tree service work">
+      <img src="TreePics10.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics11.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics12.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics13.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics14.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics15.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics16.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics17.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics18.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics19.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics20.jpg" class="slide" alt="Tree service work">
+      <img src="TreePics21.jpg" class="slide" alt="Tree service work">
     </div>
 
-    <!-- Always Accessible Sticky Quote / Call Bar -->
-    <div class="sticky-quote-bar">
-        <a href="tel:2282133019" class="sticky-btn">📞 Tap to Call & Request a Quote</a>
+    <!-- Quick Call / Action Box -->
+    <div class="cta-box" id="quote">
+      <p>Need safe and reliable tree removal or trimming?</p>
+      <a href="tel:2282133019" class="btn">📞 Call Now: (228) 213-3019</a>
+      <a href="https://www.facebook.com/people/Johns-Tree-Service/61594230819675/" target="_blank" rel="noopener" class="btn btn-secondary">Visit Facebook Page</a>
+      <a href="https://share.google/VYydDAysWhwR4NTkl" target="_blank" rel="noopener" class="btn btn-secondary">Google Business Profile</a>
     </div>
 
-    <footer>
-        <p>&copy; 2026 John's B.M.B Tree Service. Mississippi Gulf Coast.</p>
-    </footer>
+    <!-- Services -->
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Tree Removal</h3>
+        <p>Safe, complete removal of hazardous or unwanted trees — including stumps when needed.</p>
+      </div>
+      <div class="service-card">
+        <h3>Trimming &amp; Pruning</h3>
+        <p>Professional crown cleaning, shaping, and health pruning for stronger, safer trees.</p>
+      </div>
+      <div class="service-card">
+        <h3>Storm Damage Cleanup</h3>
+        <p>Fast response after storms — clearing fallen limbs and dangerous hangers.</p>
+      </div>
+      <div class="service-card">
+        <h3>Lot Clearing</h3>
+        <p>Brush and undergrowth clearing for new builds or property improvement.</p>
+      </div>
+    </div>
 
-    <!-- JavaScript for Slider and YouTube Feed Integration -->
-    <script>
-        // 1. Image Slider Logic (Changes every 3 seconds)
-        let slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-        
-        function nextSlide() {
-            if(slides.length > 0) {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }
-        }
-        if(slides.length > 0) {
-            setInterval(nextSlide, 3000);
-        }
+  </div>
 
-        // 2. YouTube Feed Integration Logic
-        document.addEventListener("DOMContentLoaded", function () {
-            const channelID = "UCKKvE_CryIgX7qjs3txZyiQ"; 
-            const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.youtube.com%2Ffeeds%2Fvideos.xml%3Fchannel_id%3D${channelID}`;
-            const container = document.getElementById("youtube-videos");
+  <footer>
+    <p>© <span id="year"></span> John's B.M.B Tree Service · Gulf Coast</p>
+    <p style="margin-top:0.4rem"><a href="tel:2282133019">(228) 213-3019</a></p>
+  </footer>
 
-            if (container) {
-                fetch(apiURL)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'ok') {
-                            container.innerHTML = ""; 
-                            // Pulls the latest 4 videos
-                            data.items.slice(0, 4).forEach(video => {
-                                let link = video.link;
-                                let id = link.substring(link.indexOf("=") + 1);
+  <script>
+    // Auto-rotating slider
+    const slides = document.querySelectorAll('#image-slider .slide');
+    let current = 0;
 
-                                let videoCard = document.createElement("div");
-                                videoCard.className = "video-card";
-                                videoCard.innerHTML = `
-                                    <iframe width="100%" height="180" 
-                                        src="https://www.youtube.com/embed/${id}" 
-                                        title="${video.title}" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                    </iframe>
-                                    <h3>${video.title}</h3>
-                                `;
-                                container.appendChild(videoCard);
-                            });
-                        } else {
-                            container.innerHTML = "<p>Unable to load videos right now.</p>";
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error fetching videos:", error);
-                        container.innerHTML = "<p>Error loading videos.</p>";
-                    });
-            }
-        });
-    </script>
+    function nextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    // Change photo every 4 seconds
+    setInterval(nextSlide, 4000);
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-Can you please add it in for me?
