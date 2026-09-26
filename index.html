@@ -175,6 +175,11 @@
       color: #000;
     }
     .btn-gold:hover { background: #b8972e; }
+    .btn-sms {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn-sms:hover { background: #1ebe5d; }
 
     /* Reviews Section */
     .reviews-section h2 {
@@ -426,27 +431,27 @@
       <button id="quote-close" style="position: absolute; right: 0; top: -10px; font-size: 1.6rem; background: none; border: none; cursor: pointer;">&times;</button>
       <h2 style="color: var(--green-dark); text-align: center; margin-bottom: 0.75rem;">Request Free Quote &amp; Health Evaluation</h2>
       
-      <!-- Web3Forms Submission for Free Quote Request -->
-      <form class="custom-form" action="https://api.web3forms.com/submit" method="POST">
+      <!-- Free Quote Request Form + Instant SMS Fallback -->
+      <form class="custom-form" id="quote-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="ae455f58-79aa-4dfb-8c69-cb560e6bf9dc">
         <input type="hidden" name="subject" value="FREE QUOTE & HEALTH ASSESSMENT REQUEST">
         <input type="hidden" name="from_name" value="John's BMB Tree Service Web Lead">
 
         <div>
           <label>Your Name *</label>
-          <input type="text" name="name" required placeholder="John Doe">
+          <input type="text" id="q-name" name="name" required placeholder="John Doe">
         </div>
         <div>
           <label>Phone Number *</label>
-          <input type="tel" name="phone" required placeholder="(228) 000-0000">
+          <input type="tel" id="q-phone" name="phone" required placeholder="(228) 000-0000">
         </div>
         <div>
           <label>City / Area *</label>
-          <input type="text" name="city" required placeholder="Biloxi, Gulfport, etc.">
+          <input type="text" id="q-city" name="city" required placeholder="Biloxi, Gulfport, etc.">
         </div>
         <div>
           <label>Service Needed</label>
-          <select name="service">
+          <select id="q-service" name="service">
             <option value="Tree Removal">Tree Removal</option>
             <option value="Trimming">Trimming &amp; Pruning</option>
             <option value="Storm Damage">Storm Damage Cleanup</option>
@@ -455,16 +460,17 @@
         </div>
         <div class="full">
           <label>Project Details / Notes</label>
-          <textarea name="message" rows="3" placeholder="Briefly describe your tree or issue..."></textarea>
+          <textarea id="q-msg" name="message" rows="3" placeholder="Briefly describe your tree or issue..."></textarea>
         </div>
-        <div class="full" style="text-align: center; margin-top: 0.5rem;">
-          <button type="submit" class="btn" style="width: 100%; margin: 0;">Send Request &amp; Alert Arborist</button>
+        <div class="full" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+          <button type="submit" class="btn" style="flex: 1; margin: 0;">Send Email Request</button>
+          <button type="button" class="btn btn-sms" id="sms-btn" style="flex: 1; margin: 0;">💬 Send via Text Message</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- JavaScript for Image Slider & Quote Panel -->
+  <!-- JavaScript for Image Slider, Quote Panel & SMS Fallback -->
   <script>
     // Image Slider Rotation
     let slides = document.querySelectorAll('.slider-container img');
@@ -497,6 +503,21 @@
     if(openPanelBtn) openPanelBtn.addEventListener('click', openPanel);
     if(closeBtn) closeBtn.addEventListener('click', closePanel);
     if(quoteBackdrop) quoteBackdrop.addEventListener('click', closePanel);
+
+    // Instant Text Message Fallback Button Action
+    document.getElementById('sms-btn').addEventListener('click', function() {
+      const name = document.getElementById('q-name').value || 'Not provided';
+      const phone = document.getElementById('q-phone').value || 'Not provided';
+      const city = document.getElementById('q-city').value || 'Not provided';
+      const service = document.getElementById('q-service').value;
+      const msg = document.getElementById('q-msg').value || 'None';
+
+      const textBody = `New Tree Quote Request:\nName: ${name}\nPhone: ${phone}\nCity: ${city}\nService: ${service}\nNotes: ${msg}`;
+      const encoded = encodeURIComponent(textBody);
+      
+      // Opens customer's SMS app directly addressed to your phone number
+      window.location.href = `sms:2282133019?body=${encoded}`;
+    });
   </script>
 </body>
 </html>
