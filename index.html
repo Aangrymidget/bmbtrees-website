@@ -209,13 +209,6 @@
       color: var(--green-dark);
       margin: 2.25rem 0 1.25rem;
     }
-    .section-sub {
-      text-align: center;
-      color: #555;
-      font-size: 0.95rem;
-      max-width: 36rem;
-      margin: -0.75rem auto 1.5rem;
-    }
 
     /* Trust badges */
     .trust-row {
@@ -264,109 +257,6 @@
       color: #333;
     }
 
-    /* Services grid */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .service-card {
-      background: var(--white);
-      padding: 1.25rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    .service-card h3 {
-      color: var(--green);
-      margin-bottom: 0.4rem;
-      font-size: 1.05rem;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: #444;
-    }
-    .service-card.free {
-      border: 2px solid var(--green-light);
-    }
-    .service-card .free-tag {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      margin-bottom: 0.4rem;
-      text-transform: uppercase;
-    }
-
-    /* Emergency section */
-    .emergency {
-      background: linear-gradient(135deg, #3d0a0a, #6b1515);
-      color: #fff;
-      border-radius: 12px;
-      padding: 1.75rem 1.35rem;
-      text-align: center;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .emergency h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-    .emergency p {
-      opacity: 0.95;
-      margin-bottom: 1rem;
-      max-width: 32rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.65rem;
-      margin-bottom: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-    }
-
-    /* Reviews */
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-    .review-card {
-      background: var(--white);
-      padding: 1.25rem;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      border-left: 4px solid var(--green);
-    }
-    .review-card .stars {
-      color: #f4a261;
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-    }
-    .review-card p {
-      font-size: 0.92rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-    .review-card .who {
-      font-size: 0.8rem;
-      color: #666;
-      font-weight: 600;
-    }
-
     /* Quote form section (in-page) */
     .quote-section {
       background: var(--white);
@@ -381,12 +271,6 @@
       color: var(--green-dark);
       font-size: 1.35rem;
       margin-bottom: 0.35rem;
-    }
-    .quote-section .form-intro {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 1.15rem;
     }
     .inline-form {
       display: grid;
@@ -414,19 +298,7 @@
       font-family: inherit;
       background: #fafafa;
     }
-    .inline-form input:focus,
-    .inline-form select:focus,
-    .inline-form textarea:focus {
-      outline: none;
-      border-color: var(--green);
-      background: #fff;
-    }
     .inline-form textarea { min-height: 70px; resize: vertical; }
-    .inline-form .file-hint {
-      font-size: 0.75rem;
-      color: #666;
-      margin-top: 0.25rem;
-    }
     .inline-form .submit-row {
       grid-column: 1 / -1;
       text-align: center;
@@ -440,136 +312,107 @@
       color: rgba(255,255,255,0.85);
       font-size: 0.9rem;
     }
-    footer a { color: #a7c957; text-decoration: none; }
-    footer .areas-foot {
-      font-size: 0.78rem;
-      opacity: 0.85;
-      max-width: 40rem;
-      margin: 0.75rem auto 0;
-      line-height: 1.45;
-    }
 
-    /* Floating axe */
+    /* ===== STICKY AXE FLOATING BANNER (Uncluttered & Always Visible) ===== */
     .axe-float {
       position: fixed;
-      bottom: 1.15rem;
-      right: 1.15rem;
+      bottom: 1.2rem;
+      right: 1.2rem;
       z-index: 999;
-      width: 140px;
-      max-width: 36vw;
+      width: 130px;
       cursor: pointer;
       border: none;
       background: transparent;
       padding: 0;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       animation: axe-bob 3.5s ease-in-out infinite;
     }
     .axe-float:hover, .axe-float:focus {
-      transform: scale(1.08);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transform: scale(1.06);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       outline: none;
       animation: none;
     }
-    .axe-float:active { transform: scale(0.96); }
     .axe-float img {
       width: 100%;
       height: auto;
       display: block;
-      pointer-events: none;
       background: #fff;
     }
     @keyframes axe-bob {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-4px); }
     }
 
-    /* Quote panel (from floating axe) */
+    /* Quote panel popup slide-up */
     .quote-panel {
       position: fixed;
       bottom: 0; left: 0; right: 0;
       z-index: 1001;
       background: var(--white);
-      box-shadow: 0 -6px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 -6px 24px rgba(0,0,0,0.25);
       border-top: 3px solid var(--green);
       transform: translateY(100%);
       transition: transform 0.3s ease;
-      max-height: 92vh;
+      max-height: 90vh;
       overflow-y: auto;
     }
     .quote-panel.open { transform: translateY(0); }
     .quote-panel-inner {
-      max-width: 640px;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 0.9rem 1rem 1.1rem;
+      padding: 1rem 1.25rem 1.5rem;
       position: relative;
     }
     .quote-panel h2 {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: var(--green-dark);
       text-align: center;
       margin-bottom: 0.75rem;
-      font-weight: 600;
     }
     .quote-close {
       position: absolute;
-      top: 0.45rem; right: 0.65rem;
+      top: 0.5rem; right: 0.75rem;
       background: none; border: none;
-      font-size: 1.4rem; line-height: 1;
+      font-size: 1.5rem; line-height: 1;
       color: #666; cursor: pointer;
-      padding: 0.2rem 0.4rem;
     }
-    .quote-close:hover { color: var(--green-dark); }
     .panel-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.55rem 0.75rem;
+      gap: 0.5rem 0.75rem;
     }
     .panel-form .full { grid-column: 1 / -1; }
     .panel-form label {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--green-dark);
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.1rem;
     }
     .panel-form input,
     .panel-form select,
     .panel-form textarea {
       width: 100%;
-      padding: 0.45rem 0.55rem;
+      padding: 0.45rem 0.6rem;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 0.88rem;
       font-family: inherit;
-      background: #fafafa;
     }
-    .panel-form input:focus,
-    .panel-form select:focus,
-    .panel-form textarea:focus {
-      outline: none;
-      border-color: var(--green);
-      background: #fff;
-    }
-    .panel-form textarea { min-height: 55px; resize: vertical; }
+    .panel-form textarea { min-height: 50px; resize: vertical; }
     .panel-form .submit-row {
       grid-column: 1 / -1;
       text-align: center;
       margin-top: 0.25rem;
     }
-    .form-note {
-      font-size: 0.7rem;
-      color: #777;
-      text-align: center;
-      margin-top: 0.4rem;
-      grid-column: 1 / -1;
-    }
     .quote-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.3);
       z-index: 1000;
       opacity: 0;
       visibility: hidden;
@@ -579,26 +422,23 @@
 
     @media (max-width: 700px) {
       .slider-container { height: 240px; }
-      .btn { display: block; width: 100%; max-width: 320px; margin: 0.4rem auto; }
+      .btn { display: block; width: 100%; max-width: 320px; margin: 0.4 auto; }
       .inline-form, .panel-form { grid-template-columns: 1fr; }
-      .axe-float { width: 110px; bottom: 0.75rem; right: 0.55rem; }
-      .gallery img { height: 100px; }
+      .axe-float { width: 110px; bottom: 0.75rem; right: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. High-visibility click-to-call top bar -->
+  <!-- Top bar -->
   <div class="top-bar">
     <a href="tel:2282133019">📞 Call Now: (228) 213-3019 — Free Quotes &amp; Health Evaluations</a>
   </div>
 
   <header>
     <h1>John's B.M.B Tree Service</h1>
-    <!-- 2. Clear value proposition above the fold -->
     <p class="value-prop">Professional Tree Removal &amp; Trimming on the Mississippi Gulf Coast</p>
     <p class="trust-line">Local hands · Honest work · Serving Biloxi, Gulfport, Ocean Springs, Pascagoula, Bay St. Louis, Hattiesburg &amp; surrounding areas</p>
-    <!-- 3. Trust signals -->
     <div class="trust-row">
       <span class="trust-badge">Fully Insured</span>
       <span class="trust-badge">Licensed</span>
@@ -610,33 +450,15 @@
   <div class="container">
 
     <div class="slider-container" id="image-slider" aria-label="Photo gallery of our tree work">
-      <img src="TreePics1.jpg" class="slide active" alt="Tree service work on the Mississippi Gulf Coast" loading="eager">
+      <img src="TreePics1.jpg" class="slide active" alt="Tree service work" loading="eager">
       <img src="TreePics2.jpg" class="slide" alt="Tree removal" loading="lazy">
       <img src="TreePics3.jpg" class="slide" alt="Tree trimming" loading="lazy">
-      <img src="TreePics4.jpg" class="slide" alt="Storm damage cleanup" loading="lazy">
-      <img src="TreePics5.jpg" class="slide" alt="Arborist care" loading="lazy">
-      <img src="TreePics6.jpg" class="slide" alt="Tree work" loading="lazy">
-      <img src="TreePics7.jpg" class="slide" alt="Tree service" loading="lazy">
-      <img src="TreePics8.jpg" class="slide" alt="Professional tree care" loading="lazy">
-      <img src="TreePics9.jpg" class="slide" alt="Gulf Coast tree work" loading="lazy">
-      <img src="TreePics10.jpg" class="slide" alt="Tree removal Mississippi" loading="lazy">
-      <img src="TreePics11.jpg" class="slide" alt="Pruning work" loading="lazy">
-      <img src="TreePics12.jpg" class="slide" alt="Lot clearing" loading="lazy">
-      <img src="TreePics13.jpg" class="slide" alt="Tree service" loading="lazy">
-      <img src="TreePics14.jpg" class="slide" alt="Hazardous tree removal" loading="lazy">
-      <img src="TreePics15.jpg" class="slide" alt="Canopy work" loading="lazy">
-      <img src="TreePics16.jpg" class="slide" alt="Tree care" loading="lazy">
-      <img src="TreePics17.jpg" class="slide" alt="Arborist services" loading="lazy">
-      <img src="TreePics18.jpg" class="slide" alt="Storm cleanup" loading="lazy">
-      <img src="TreePics19.jpg" class="slide" alt="Tree trimming Gulf Coast" loading="lazy">
-      <img src="TreePics20.jpg" class="slide" alt="Professional results" loading="lazy">
-      <img src="TreePics21.jpg" class="slide" alt="Local tree service" loading="lazy">
     </div>
 
     <div class="cta-box">
       <p>Need safe, reliable tree removal or trimming?</p>
       <a href="tel:2282133019" class="btn">📞 Call (228) 213-3019</a>
-      <a href="#get-quote" class="btn btn-secondary">Request Free Quote</a>
+      <button class="btn btn-secondary" id="open-panel-btn-1">Request Free Quote</button>
       <a href="https://www.facebook.com/people/Johns-Tree-Service/61594230819675/" target="_blank" rel="noopener" class="btn btn-secondary">Facebook</a>
       <a href="https://share.google/VYydDAysWhwR4NTkl" target="_blank" rel="noopener" class="btn btn-secondary">Google Reviews</a>
     </div>
@@ -648,11 +470,96 @@
         <span>Biloxi</span><span>Gulfport</span><span>Ocean Springs</span><span>Pascagoula</span>
         <span>Bay St. Louis</span><span>Long Beach</span><span>Pass Christian</span><span>D'Iberville</span>
         <span>Gautier</span><span>Moss Point</span><span>Waveland</span><span>Diamondhead</span>
-        <span>Vancleave</span><span>Saucier</span><span>Wiggins</span><span>Picayune</span>
-        <span>Hattiesburg</span><span>Lucedale</span><span>Kiln</span><span>St. Martin</span>
-        <span>Harrison County</span><span>Hancock County</span><span>Jackson County</span><span>Stone County</span>
+        <span>Hattiesburg</span><span>Harrison County</span><span>Hancock County</span><span>Jackson County</span>
       </div>
     </div>
 
-    <!-- 5. Emergency section -->
-    <div class="e
+  </div>
+
+  <footer>
+    <p>&copy; 2026 John's B.M.B Tree Service LLC. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== ALWAYS VISIBLE STICKY AXE FLOATING BANNER ===== -->
+  <button class="axe-float" id="sticky-axe-btn" aria-label="Request Free Quote and Tree Health Evaluation">
+    <img src="StickyAxe.jpg" alt="Click here for estimate & health evaluations">
+  </button>
+
+  <!-- Backdrop -->
+  <div class="quote-backdrop" id="quote-backdrop"></div>
+
+  <!-- Slide-up Quote Form Panel -->
+  <div class="quote-panel" id="quote-panel">
+    <div class="quote-panel-inner">
+      <button class="quote-close" id="quote-close">&times;</button>
+      <h2>Request Free Quote &amp; Health Evaluation</h2>
+      <form class="panel-form" action="#" method="POST">
+        <div>
+          <label for="panel-name">Your Name *</label>
+          <input type="text" id="panel-name" name="name" required placeholder="John Doe">
+        </div>
+        <div>
+          <label for="panel-phone">Phone Number *</label>
+          <input type="tel" id="panel-phone" name="phone" required placeholder="(228) 000-0000">
+        </div>
+        <div>
+          <label for="panel-city">City / Area *</label>
+          <input type="text" id="panel-city" name="city" required placeholder="Biloxi, Gulfport, etc.">
+        </div>
+        <div>
+          <label for="panel-service">Service Needed</label>
+          <select id="panel-service" name="service">
+            <option value="Removal">Tree Removal</option>
+            <option value="Trimming">Trimming &amp; Pruning</option>
+            <option value="Storm">Storm Damage Cleanup</option>
+            <option value="Evaluation">Free Health Evaluation</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="panel-details">Project Details / Upload Photo Note</label>
+          <textarea id="panel-details" name="details" placeholder="Briefly describe the tree or issue..."></textarea>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn" style="width: 100%; margin: 0;">Get My Free Estimate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Image Slider & Sticky Axe Panel Interaction -->
+  <script>
+    // Image Slider Rotation
+    let slides = document.querySelectorAll('.slider-container img');
+    let currentSlide = 0;
+    if (slides.length > 0) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4000);
+    }
+
+    // Sticky Axe Panel Toggle Logic
+    const axeBtn = document.getElementById('sticky-axe-btn');
+    const openPanelBtn = document.getElementById('open-panel-btn-1');
+    const quotePanel = document.getElementById('quote-panel');
+    const quoteBackdrop = document.getElementById('quote-backdrop');
+    const closeBtn = document.getElementById('quote-close');
+
+    function openPanel() {
+      quotePanel.classList.add('open');
+      quoteBackdrop.classList.add('open');
+    }
+
+    function closePanel() {
+      quotePanel.classList.remove('open');
+      quoteBackdrop.classList.remove('open');
+    }
+
+    if(axeBtn) axeBtn.addEventListener('click', openPanel);
+    if(openPanelBtn) openPanelBtn.addEventListener('click', (e) => { e.preventDefault(); openPanel(); });
+    if(closeBtn) closeBtn.addEventListener('click', closePanel);
+    if(quoteBackdrop) quoteBackdrop.addEventListener('click', closePanel);
+  </script>
+</body>
+</html>
