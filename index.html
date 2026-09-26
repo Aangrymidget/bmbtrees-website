@@ -28,7 +28,7 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--cream);
-      padding-bottom: 320px; /* space for sticky form */
+      padding-bottom: 140px; /* smaller space for compact sticky form */
     }
 
     /* Header */
@@ -182,7 +182,7 @@
       text-decoration: none;
     }
 
-    /* ========== STICKY QUOTE FORM ========== */
+    /* ========== COMPACT STICKY QUOTE FORM ========== */
     .sticky-quote {
       position: fixed;
       bottom: 0;
@@ -190,147 +190,82 @@
       right: 0;
       z-index: 1000;
       background: var(--white);
-      box-shadow: 0 -6px 24px rgba(0,0,0,0.18);
-      border-top: 4px solid var(--green);
-      max-height: 90vh;
-      overflow-y: auto;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
+      border-top: 3px solid var(--green);
     }
 
     .sticky-quote-inner {
-      max-width: 960px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 1rem 1.25rem 1.25rem;
+      padding: 0.65rem 1rem 0.75rem;
     }
 
     .sticky-quote h2 {
-      font-size: 1.2rem;
+      font-size: 0.95rem;
       color: var(--green-dark);
       text-align: center;
-      margin-bottom: 0.85rem;
-      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+      font-weight: 600;
     }
 
     .quote-form {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.65rem 0.9rem;
-    }
-
-    .quote-form .full-width {
-      grid-column: 1 / -1;
+      grid-template-columns: 1fr 1fr 1.4fr auto;
+      gap: 0.4rem 0.5rem;
+      align-items: end;
     }
 
     .quote-form label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: var(--green-dark);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
+      line-height: 1.2;
     }
 
     .quote-form input[type="text"],
     .quote-form input[type="tel"],
-    .quote-form input[type="email"],
-    .quote-form select,
-    .quote-form textarea {
+    .quote-form input[type="email"] {
       width: 100%;
-      padding: 0.55rem 0.7rem;
+      padding: 0.4rem 0.55rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 0.95rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
       font-family: inherit;
       background: #fafafa;
       transition: border-color 0.2s;
+      height: 2.1rem;
     }
 
-    .quote-form input:focus,
-    .quote-form select:focus,
-    .quote-form textarea:focus {
+    .quote-form input:focus {
       outline: none;
       border-color: var(--green);
       background: #fff;
     }
 
-    .quote-form textarea {
-      resize: vertical;
-      min-height: 60px;
-    }
-
-    .contact-prefs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.1rem;
-      align-items: center;
-      padding: 0.3rem 0;
-    }
-
-    .contact-prefs label {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-weight: 500;
-      font-size: 0.9rem;
-      cursor: pointer;
-      margin: 0;
-    }
-
-    .contact-prefs input[type="checkbox"] {
-      width: 1.05rem;
-      height: 1.05rem;
-      accent-color: var(--green);
-    }
-
-    .donate-optin {
-      background: #f0f7f2;
-      border: 1px solid #c8e0d0;
-      border-radius: 8px;
-      padding: 0.7rem 0.9rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-
-    .donate-optin input[type="checkbox"] {
-      width: 1.15rem;
-      height: 1.15rem;
-      margin-top: 0.15rem;
-      accent-color: var(--green);
-      flex-shrink: 0;
-    }
-
-    .donate-optin label {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: #333;
-      line-height: 1.4;
-      margin: 0;
-      cursor: pointer;
-    }
-
-    .donate-optin strong {
-      color: var(--green-dark);
-    }
-
     .form-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.35rem;
       align-items: center;
-      justify-content: center;
-      margin-top: 0.35rem;
     }
 
     .form-actions .btn {
       margin: 0;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      height: 2.1rem;
+      line-height: 1.2;
     }
 
     .form-note {
-      font-size: 0.78rem;
-      color: #666;
+      font-size: 0.68rem;
+      color: #777;
       text-align: center;
-      margin-top: 0.4rem;
+      margin-top: 0.35rem;
+      grid-column: 1 / -1;
     }
 
     /* Collapse toggle for mobile */
@@ -340,8 +275,8 @@
       background: var(--green);
       color: white;
       border: none;
-      padding: 0.85rem 1rem;
-      font-size: 1.05rem;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       text-align: center;
@@ -368,7 +303,7 @@
 
       .sticky-quote-inner {
         display: none;
-        padding-top: 0.75rem;
+        padding: 0.6rem 0.9rem 0.75rem;
       }
 
       .sticky-quote.open .sticky-quote-inner {
@@ -385,6 +320,18 @@
 
       .quote-form {
         grid-template-columns: 1fr;
+        gap: 0.45rem;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .form-actions .btn {
+        width: 100%;
+        height: auto;
+        padding: 0.6rem 1rem;
       }
     }
 
@@ -465,61 +412,30 @@
     <p style="margin-top:0.4rem"><a href="tel:2282133019">(228) 213-3019</a></p>
   </footer>
 
-  <!-- ========== STICKY ABOVE-THE-FOLD CTA FORM ========== -->
+  <!-- ========== COMPACT STICKY QUOTE FORM ========== -->
   <div class="sticky-quote" id="sticky-quote">
     <button type="button" class="sticky-toggle" id="sticky-toggle" aria-expanded="false">
-      Get Free Quote &amp; Health Evaluations Today!
+      Get Free Quote Today!
     </button>
     <div class="sticky-quote-inner">
-      <h2>Get Free Quote &amp; Health Evaluations Today!</h2>
+      <h2>Get Free Quote Today!</h2>
       <form class="quote-form" id="quote-form" action="#" method="post">
         <div>
           <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required placeholder="Your full name" autocomplete="name">
+          <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
         </div>
         <div>
-          <label for="phone">Phone Number *</label>
+          <label for="phone">Phone *</label>
           <input type="tel" id="phone" name="phone" required placeholder="(228) 000-0000" autocomplete="tel">
         </div>
-        <div class="full-width">
+        <div>
           <label for="address">Property Address *</label>
           <input type="text" id="address" name="address" required placeholder="Street, City, ZIP" autocomplete="street-address">
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+        <div class="form-actions">
+          <button type="submit" class="btn">Request Quote</button>
         </div>
-        <div>
-          <label for="social">Social / Messenger Handle</label>
-          <input type="text" id="social" name="social" placeholder="Facebook, Instagram, etc.">
-        </div>
-        <div class="full-width">
-          <label>Preferred Contact Method</label>
-          <div class="contact-prefs">
-            <label><input type="checkbox" name="contact_pref" value="call"> Call</label>
-            <label><input type="checkbox" name="contact_pref" value="text"> Text</label>
-            <label><input type="checkbox" name="contact_pref" value="email"> Email</label>
-            <label><input type="checkbox" name="contact_pref" value="messenger"> Messenger</label>
-            <label><input type="checkbox" name="contact_pref" value="social"> Social</label>
-          </div>
-        </div>
-        <div class="full-width">
-          <label for="details">Brief Description (optional)</label>
-          <textarea id="details" name="details" placeholder="Tree type, issue, or what you need help with..."></textarea>
-        </div>
-        <div class="full-width">
-          <div class="donate-optin">
-            <input type="checkbox" id="donate" name="donate" value="yes">
-            <label for="donate">
-              <strong>Opt-in:</strong> I would like to donate $1 or more to a Military Non-profit of my choice when I book service. (Optional – 100% goes to the cause you select.)
-            </label>
-          </div>
-        </div>
-        <div class="full-width form-actions">
-          <button type="submit" class="btn">Request Free Quote</button>
-          <a href="tel:2282133019" class="btn btn-secondary">📞 Call (228) 213-3019</a>
-        </div>
-        <p class="form-note full-width">We’ll respond quickly. No spam. Your info stays private.</p>
+        <p class="form-note">We’ll respond quickly. No spam.</p>
       </form>
     </div>
   </div>
